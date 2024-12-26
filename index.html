@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleplay Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="character">
+            <img src="https://cdn.imgchest.com/files/yrgcnx2z894.png" alt="Beelzebub">
+        </div>
+        <div class="buttons">
+            <button class="game-btn" onclick="startGame()">START GAME</button>
+            <button class="game-btn" onclick="exitGame()">EXIT</button>
+        </div>
+    </div>
+    <div class="end-screen" id="endScreen">
+        <div class="orange-box"></div>
+        <img src="https://cdn.imgchest.com/files/yq9c3k9ez64.png" alt="End Image">
+        <div class="text" id="dialogueText">
+            <p> . . .</p>
+            <p style="display: none;">What the fuck.</p>
+            <p style="display: none;">I worked hard on this code.</p>
+            <p style="display: none;">Nuh uh.</p>
+            <p style="display: none;">Go play the stupid game.</p>
+            <p style="display: none;">Dumbass.</p>
+            <p style="display: none;">Also, assuming I didn't happen to fix this magically, and forget about this. You gotta reload b/c this is an infinite loop.
+                Sorry.
+            </p>
+        </div>
+        <div class="eye-symbols">
+            <span class="symbol left">&#x25C0;</span>
+            <span class="symbol middle">&#x25CF;</span>
+            <span class="symbol right">&#x25B6;</span>
+        </div>
+    </div>
+ <!-- Update the gameScreen div in your index.html -->
+ <div class="end-screen" id="gameScreen" style="display: none; background: none;">
+    <div class="character-title" style="
+        position: absolute;
+        top: 65%;
+        width: 100%;
+        color: #D13B37;
+        font-size: 1.7em;
+        font-weight: bold;
+        text-align: center;
+        z-index: 2;
+        font-family: 'Crimson Text', serif;
+    ">
+        ● Beelzebub, The Great Fly ●
+    </div>
+    
+    <div id="gameDialogueText" style="
+    position: absolute;
+    bottom: 23%;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4em;
+">
+    <p>. . .</p>
+</div>
+    
+    <div class="eye-symbols" id="gameEyeSymbols" style="
+        position: absolute;
+        bottom: 10%;
+        width: 100%;
+    ">
+        <span class="symbol left">&#x25C0;</span>
+        <span class="symbol middle">&#x25CF;</span>
+        <span class="symbol right">&#x25B6;</span>
+    </div>
+
+    <div class="buttons" id="choiceButtons" style="
+        display: none;
+        position: absolute;
+        bottom: 3%;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    ">
+        <button class="game-btn" onclick="makeChoice('accept')" style="width: 570px; height: 50px;">Accept the deal</button>
+        <button class="game-btn" onclick="makeChoice('reject')" style="width: 570px; height: 50px;">Reject the deal</button>
+    </div>
+</div>
+    <script src="gameContent.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

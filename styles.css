@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Crimson Text', serif;
+    background-color: #080424;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    width: 300%; /* Scale background */
+    height: 50%;
+    bottom: 35.7%; /* Adjust this value to move the avatar up or down */
+    background-image: url('https://cdn.imgchest.com/files/739cxzv6pj7.png');
+    background-repeat: repeat-x;
+    background-position: 0 0;
+    animation: scroll 80s linear infinite; /* Slower animation */
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-33.33%); /* Loop back after one complete scroll */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Align elements at the bottom */
+    height: 98vh;
+    z-index: 1;
+    padding-bottom: 20px; /* Ensure padding from bottom */
+}
+
+.character img {
+    max-width: 50%; /* Smaller avatar */
+    max-height: 60%;
+    position: absolute;
+    bottom: 36.0%; /* Adjust this value to move the avatar up or down */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: absolute; /* Position buttons independently */
+    bottom: 3%; /* Adjust this value to move buttons up or down */
+}
+
+.game-btn {
+    background: url('https://cdn.imgchest.com/files/45xcvax9dz7.png') no-repeat center center;
+    background-size: cover;
+    width: 570px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    color: white; /* Text color */
+    font-size: 16px; /* Adjust font size as needed */
+    text-align: center;
+    line-height: 50px; /* Center text vertically */
+    opacity: 0.7; /* Dim color */
+    transition: transform 0.3s, opacity 0.3s; /* Smooth transition */
+}
+
+.game-btn:hover {
+    transform: scale(1.1); /* Grow on hover */
+    opacity: 1; /* Brighten on hover */
+}
+
+.end-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #080424;
+    color: white; /* Keep text white */
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.orange-box {
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-3deg); /* Ensure the box is positioned relative to the image */
+    background-color: #D13B37; /* Use the specified color */
+    z-index: 0;
+}
+
+.end-screen img {
+    max-width: 50%;
+    max-height: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+.end-screen .text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.text p {
+    display: none;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.text p.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.eye-symbols {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    justify-content: center;
+    color: #D13B37; /* Use the specified color for the symbols */
+}
+
+.eye-symbols .left {
+    animation: moveSymbolsLeft 1s infinite alternate;
+}
+
+.eye-symbols .right {
+    animation: moveSymbolsRight 1s infinite alternate;
+}
+
+@keyframes moveSymbolsLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-5px); /* Move away from the center */
+    }
+}
+
+@keyframes moveSymbolsRight {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(5px); /* Move away from the center */
+    }
+}
+
+.symbol {
+    font-size: 90%;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0.7;
+}
+
+.symbol:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Add these to your existing styles.css */
+.game-content {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+.text-box {
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center; /* Center text */
+}
+
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center; /* Center buttons */
+    justify-content: center;
+}
+
+#gameScreen {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.dialogue-text {
+    color: white;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+
+#choiceButtons .game-btn {
+    width: 400px;
+    margin: 5px 0;
+}
+
