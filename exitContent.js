@@ -45,7 +45,7 @@ function resetToMainMenu() {
         exitDialogueIndex = 0;
     }, 1000);
 }
-document.addEventListener('click', function () {
+document.addEventListener('click', function (event) {
     const endScreen = document.getElementById('endScreen');
     if (!endScreen) {
         console.error('Unable to access end screen in the DOM.');

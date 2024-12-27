@@ -56,7 +56,7 @@ function resetToMainMenu(): void {
     }, 1000);
 }
 
-document.addEventListener('click', function(): void {
+document.addEventListener('click', function(event: MouseEvent): void {
     const endScreen: HTMLDivElement = document.getElementById('endScreen') as HTMLDivElement;
 
     if (!endScreen) {

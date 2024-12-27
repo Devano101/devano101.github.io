@@ -95,7 +95,7 @@ function handleGameDialogue() {
         resetToMainMenu();
     }
 }
-document.addEventListener('click', function () {
+document.addEventListener('click', function (event) {
     const gameScreen = document.getElementById('gameScreen');
     if (!gameScreen) {
         console.error('No game screen found.');

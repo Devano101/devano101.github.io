@@ -131,7 +131,7 @@ function handleGameDialogue(): void {
     }
 }
 
-document.addEventListener('click', function(): void {
+document.addEventListener('click', function(event: MouseEvent): void {
     const gameScreen: HTMLDivElement | null = document.getElementById('gameScreen') as HTMLDivElement;
 
     if (!gameScreen) {
